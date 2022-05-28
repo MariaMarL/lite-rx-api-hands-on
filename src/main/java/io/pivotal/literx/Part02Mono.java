@@ -1,5 +1,6 @@
 package io.pivotal.literx;
 
+import reactor.core.CoreSubscriber;
 import reactor.core.publisher.Mono;
 
 /**
@@ -14,28 +15,48 @@ public class Part02Mono {
 
 	// TODO Return an empty Mono
 	Mono<String> emptyMono() {
-		return null;
-	}
 
+		Mono<String> mono = Mono.empty();
+		mono.log().subscribe();
+
+		return mono;
+
+	}
 //========================================================================================
 
 	// TODO Return a Mono that never emits any signal
 	Mono<String> monoWithNoSignal() {
-		return null;
+		Mono<String> mono = Mono.never();
+		mono.log().subscribe();
+
+		return mono;
 	}
 
 //========================================================================================
 
 	// TODO Return a Mono that contains a "foo" value
 	Mono<String> fooMono() {
-		return null;
-	}
 
+		Mono<String> mono = Mono.just("foo");
+
+		return mono;
+	}
 //========================================================================================
 
 	// TODO Create a Mono that emits an IllegalStateException
 	Mono<String> errorMono() {
-		return null;
+		Mono<String> mono = Mono.error(new IllegalStateException("This is an illegal exception"));
+		mono.log().subscribe();
+
+		return mono;
+
 	}
 
+
+	public static void main(String[] args) {
+		Part02Mono play = new Part02Mono();
+		//play.emptyMono();
+		//play.monoWithNoSignal();
+		play.errorMono();
+	}
 }
