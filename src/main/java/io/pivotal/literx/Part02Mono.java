@@ -52,11 +52,4 @@ public class Part02Mono {
 
 	}
 
-
-	public static void main(String[] args) {
-		Part02Mono play = new Part02Mono();
-		//play.emptyMono();
-		//play.monoWithNoSignal();
-		play.errorMono();
-	}
 }

@@ -81,17 +81,4 @@ public class Part01Flux {
 	}
 
 
-
-	//============================================
-
-	public static void main(String[] args) {
-
-		Part01Flux play = new Part01Flux();
-		//play.fooBarFluxFromValues();
-		//play.fooBarFluxFromList();
-		//play.errorFlux();
-		//play.counter();
-		//fooBarFluxFromValues();
-	}
-
 }
