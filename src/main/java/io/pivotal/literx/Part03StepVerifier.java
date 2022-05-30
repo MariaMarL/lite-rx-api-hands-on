@@ -96,7 +96,7 @@ public class Part03StepVerifier {
 
 
 		StepVerifier.withVirtualTime(supplier)
-				.thenAwait(Duration.ofMillis(1000))
+				.thenAwait(Duration.ofSeconds(3600))
 				.expectNextCount(3600)
 				.verifyComplete();
 
